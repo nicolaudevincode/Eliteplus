@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite PLUS - Esquenta Black Friday | TV por Streaming</title>
+<meta name="description" content="Esquenta Black Friday Elite PLUS: canais, filmes, séries e esportes ao vivo em HD e 4K com preços promocionais. Planos a partir de R$13,32/mês no anual. Teste grátis disponível.">
+<link rel="icon" type="image/png" href="fotos/favicon.png">
+<link rel="apple-touch-icon" href="fotos/apple-touch-icon.png">
+<meta name="theme-color" content="#050509">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Elite PLUS">
+<meta property="og:title" content="Esquenta Black Friday Elite PLUS | TV por Streaming">
+<meta property="og:description" content="Canais, filmes, séries e esportes ao vivo em HD e 4K com preços de Black Friday. Planos a partir de R$29,90/mês.">
+<meta property="og:image" content="fotos/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="fotos/fundo.jpg" media="(min-width:701px)">
+<link rel="preload" as="image" href="fotos/fundo-mobile.jpg" media="(max-width:700px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: #050509;
+  --bg2: #090811;
+  --bg-card: #0C0A18;
+  --bg-card2: #141128;
+  --gold: #8B5CF6;
+  --gold-light: #A78BFA;
+  --gold-dark: #6D28D9;
+  --neon: #22D3EE;
+  --white: #F2F1F7;
+  --muted: #9A96B4;
+  --line: rgba(139,92,246,0.18);
+  --line2: rgba(255,255,255,0.07);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:linear-gradient(rgba(5,5,9,0.88),rgba(5,5,9,0.94)),url('fotos/fundo.jpg') center top/cover fixed no-repeat;
+  color:var(--white);
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+}
+@media(max-width:700px){
+  body{
+    background:linear-gradient(rgba(5,5,9,0.9),rgba(5,5,9,0.95)),url('fotos/fundo-mobile.jpg') center 30%/cover scroll no-repeat;
+  }
+}
+::selection{background:var(--gold);color:#050509;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;font-weight:800;line-height:1.1;}
+.space{font-family:'Montserrat',sans-serif;}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+/* NAV */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(5,5,9,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+nav{
+  max-width:1140px;margin:0 auto;padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Montserrat',sans-serif;
+  font-weight:900;font-size:1.2rem;letter-spacing:-0.03em;
+}
+.logo img{height:46px;width:auto;object-fit:contain;}
+.logo span{color:var(--gold);}
+.nav-links{display:flex;gap:28px;font-size:0.88rem;font-weight:500;color:var(--muted);}
+.nav-links a{transition:color .2s;}
+.nav-links a:hover{color:var(--white);}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 24px;border-radius:100px;
+  font-weight:700;font-size:0.88rem;letter-spacing:0.01em;
+  transition:transform .2s, box-shadow .2s;
+  cursor:pointer;border:none;font-family:'Montserrat',sans-serif;
+}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:#07070D;
+  box-shadow:0 0 24px rgba(139,92,246,0.25);
+}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(139,92,246,0.4);}
+.btn-outline{
+  background:transparent;border:1.5px solid var(--line);
+  color:var(--white);
+}
+.btn-outline:hover{border-color:var(--gold);transform:translateY(-2px);}
+.btn-wa{
+  background:#25D366;color:#06170D;
+  box-shadow:0 0 20px rgba(37,211,102,0.25);
+}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,0.4);}
+.nav-cta{display:none;}
+@media(min-width:860px){.nav-cta{display:inline-flex;}}
+.mobile-toggle{
+  display:block;background:none;border:none;color:var(--white);
+  font-size:1.5rem;cursor:pointer;padding:4px;
+}
+@media(min-width:860px){.mobile-toggle{display:none;}}
+.nav-links{display:none;}
+@media(min-width:860px){.nav-links{display:flex;}}
+.nav-links.open{display:flex;flex-direction:column;position:absolute;
+  top:100%;left:0;right:0;background:var(--bg);
+  border-bottom:1px solid var(--line);padding:20px 24px;gap:16px;
+  max-height:calc(100vh - 100%);overflow-y:auto;
+}
+
+/* HERO */
+.hero{
+  padding:140px 0 80px;
+  position:relative;overflow:hidden;
+}
+.hero > *{position:relative;z-index:1;}
+.hero-text{
+  background:rgba(7,7,13,0.7);backdrop-filter:blur(6px);
+  border:1px solid rgba(139,92,246,0.08);
+  border-radius:20px;padding:36px 32px;
+}
+.hero::before{
+  content:"";
+  position:absolute;top:-120px;right:-100px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,92,246,0.12),transparent 65%);
+}
+.hero::after{
+  content:"";
+  position:absolute;bottom:-180px;left:-120px;
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,92,246,0.08),transparent 65%);
+}
+.hero-grid{
+  position:relative;z-index:2;
+  display:grid;gap:48px;align-items:center;
+  grid-template-columns:1fr;
+}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.2fr 0.8fr;}}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.78rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.12em;color:var(--gold);
+  border:1px solid var(--line);border-radius:100px;
+  padding:6px 16px;background:rgba(139,92,246,0.06);
+}
+.hero h1{
+  font-size:clamp(2.4rem,6vw,4.2rem);
+  margin:20px 0 18px;letter-spacing:-0.02em;
+}
+.hero h1 span{
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{
+  color:var(--muted);font-size:1.08rem;max-width:500px;
+  line-height:1.6;margin-bottom:30px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
+.hero-stats{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap;}
+.hero-stat .num{font-family:'Montserrat',sans-serif;font-weight:800;line-height:1.1;font-size:1.8rem;color:var(--gold);}
+.hero-stat span{font-size:0.82rem;color:var(--muted);display:block;margin-top:2px;}
+.hero-visual{
+  position:relative;border-radius:20px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:12px;padding:24px;text-align:center;
+  background:rgba(7,7,13,0.65);backdrop-filter:blur(6px);
+  border:1px solid rgba(139,92,246,0.08);
+}
+.hero-visual .badge-top{
+  background:rgba(139,92,246,0.15);backdrop-filter:blur(6px);
+  color:var(--gold);font-size:0.72rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.06em;
+  padding:6px 14px;border-radius:100px;border:1px solid var(--line);
+  display:inline-block;
+}
+.hero-visual .badge-top2{
+  background:rgba(37,211,102,0.15);backdrop-filter:blur(6px);
+  color:#25D366;font-size:0.72rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.06em;
+  padding:6px 14px;border-radius:100px;border:1px solid rgba(37,211,102,0.2);
+  display:inline-block;
+}
+.hero-visual .card-mini{
+  position:relative;z-index:2;
+  background:rgba(7,7,13,0.4);backdrop-filter:blur(4px);
+  border:1px solid rgba(139,92,246,0.08);border-radius:14px;
+  padding:14px 16px;width:80%;margin:0 auto;text-align:center;
+}
+.card-mini p{color:#fff;font-size:0.95rem;font-weight:600;margin:0 0 4px;text-shadow:0 2px 12px rgba(0,0,0,0.5);}
+.card-mini span{color:#ccc;font-size:0.82rem;text-shadow:0 2px 10px rgba(0,0,0,0.5);}
+.hero-visual .devices{
+  display:flex;gap:6px;margin-top:10px;justify-content:center;flex-wrap:wrap;
+}
+.hero-visual .devices span{
+  background:rgba(7,7,13,0.5);backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:4px 10px;
+  font-size:0.72rem;color:#ddd;font-weight:600;
+}
+
+/* BRANDS BAND */
+.brands{
+  background:var(--bg);padding:28px 0;
+  border-bottom:1px solid var(--line2);
+}
+.brands-header{text-align:center;margin-bottom:22px;}
+.brands-header span{
+  font-size:0.72rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.14em;color:var(--muted);
+}
+.brands-outer{
+  overflow:hidden;display:flex;justify-content:center;
+}
+.brands-track{
+  display:flex;gap:20px;width:max-content;
+  animation:scroll 40s linear infinite;
+  padding:0 20px;
+}
+@keyframes scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+.brand-pill{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 18px;border-radius:100px;
+  background:var(--bg2);border:1px solid var(--line2);
+  font-weight:600;font-size:0.82rem;color:var(--white);
+  white-space:nowrap;transition:border-color .25s, transform .25s;
+}
+.brand-pill:hover{border-color:var(--gold);transform:translateY(-2px);}
+.brand-pill img{
+  height:20px;width:auto;border-radius:4px;flex-shrink:0;
+}
+
+/* SECTIONS */
+section{padding:90px 0;}
+.section-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.72rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.14em;color:var(--gold);
+}
+.section-label::before{content:"";width:20px;height:2px;background:var(--gold);}
+.section-head{max-width:600px;margin-bottom:48px;}
+.section-head h2{
+  font-size:clamp(1.6rem,4vw,2.6rem);
+  margin-top:14px;letter-spacing:-0.02em;
+}
+.section-head p{color:var(--muted);font-size:1rem;margin-top:12px;line-height:1.6;}
+
+/* CANAIS / CATEGORIES */
+.canais{background:var(--bg2);border-top:1px solid var(--line);}
+.cat-grid{display:grid;gap:16px;grid-template-columns:repeat(2,1fr);}
+@media(min-width:500px){.cat-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:800px){.cat-grid{grid-template-columns:repeat(4,1fr);}}
+.cat-card{
+  background:var(--bg-card);border:1px solid var(--line2);
+  border-radius:var(--radius);padding:24px 20px;
+  text-align:center;cursor:pointer;
+  transition:transform .25s, border-color .25s, box-shadow .25s;
+}
+.cat-card:hover{
+  transform:translateY(-4px);border-color:rgba(139,92,246,0.3);
+  box-shadow:0 12px 40px rgba(0,0,0,0.3);
+}
+.cat-icon{font-size:2.2rem;margin-bottom:10px;display:block;}
+.cat-card h3{font-size:0.95rem;font-weight:700;margin-bottom:4px;}
+.cat-card span{font-size:0.78rem;color:var(--muted);}
+
+/* PLANOS */
+.planos-grid{display:grid;gap:20px;grid-template-columns:1fr;}
+@media(min-width:600px){.planos-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1024px){.planos-grid{grid-template-columns:repeat(4,1fr);}}
+.plano-card{
+  background:var(--bg-card);border:1px solid var(--line2);
+  border-radius:var(--radius);padding:32px 24px;
+  display:flex;flex-direction:column;position:relative;
+  transition:transform .25s,border-color .25s;
+}
+.plano-card:hover{transform:translateY(-4px);border-color:rgba(139,92,246,0.25);}
+.plano-card.featured{
+  background:linear-gradient(160deg,#1A1A3A,#0D0D1A);
+  border-color:var(--gold);
+  box-shadow:0 0 40px rgba(139,92,246,0.1);
+}
+.plano-card.featured .tag-pop{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:#07070D;
+  font-size:0.68rem;font-weight:800;text-transform:uppercase;
+  padding:4px 14px;border-radius:100px;letter-spacing:0.04em;
+}
+.plano-name{font-family:'Montserrat',sans-serif;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);}
+.plano-price{font-family:'Montserrat',sans-serif;font-size:2.6rem;font-weight:800;margin:12px 0 4px;letter-spacing:-0.03em;}
+.plano-price small{font-size:0.9rem;font-weight:600;color:var(--muted);}
+.plano-desc{color:var(--muted);font-size:0.88rem;margin-bottom:20px;}
+.plano-feats{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1;}
+.plano-feats li{
+  font-size:0.85rem;display:flex;align-items:center;gap:8px;color:var(--white);
+}
+.plano-feats li::before{content:"✓";color:var(--gold);font-weight:700;font-size:0.9rem;}
+.plano-card .btn{width:100%;justify-content:center;}
+
+/* DIFERENCIAIS */
+.diff-grid{display:grid;gap:20px;grid-template-columns:1fr;}
+@media(min-width:600px){.diff-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:900px){.diff-grid{grid-template-columns:repeat(4,1fr);}}
+.diff-card{
+  background:var(--bg-card);border:1px solid var(--line2);
+  border-radius:var(--radius);padding:28px 22px;text-align:center;
+}
+.diff-card .ico{font-size:2rem;margin-bottom:12px;display:block;}
+.diff-card h3{font-size:1rem;font-weight:700;margin-bottom:6px;}
+.diff-card p{color:var(--muted);font-size:0.88rem;line-height:1.5;}
+
+/* DEPOIMENTOS */
+.depoimentos{background:var(--bg2);border-top:1px solid var(--line);}
+/* DEPOIMENTOS - apresentação automática */
+.testi-slider{display:grid;max-width:780px;margin:0 auto;}
+.testi-slide{
+  grid-area:1/1;opacity:0;visibility:hidden;
+  transform:translateY(16px);
+  transition:opacity .55s ease, transform .55s ease;
+}
+.testi-slide.active{opacity:1;visibility:visible;transform:none;position:relative;z-index:1;}
+.testi-slider .testi-card{height:100%;}
+.testi-dots{display:flex;gap:2px;justify-content:center;margin-top:24px;flex-wrap:wrap;}
+.testi-dot{
+  width:26px;height:26px;border:none;padding:0;cursor:pointer;
+  background:none;display:flex;align-items:center;justify-content:center;
+}
+.testi-dot::before{
+  content:'';width:9px;height:9px;border-radius:100px;
+  background:rgba(255,255,255,0.24);
+  transition:width .25s ease, background .25s ease;
+}
+.testi-dot:hover::before{background:rgba(255,255,255,0.5);}
+.testi-dot.active::before{width:22px;background:var(--neon);}
+.testi-card{
+  background:var(--bg-card);border:1px solid var(--line2);
+  border-radius:var(--radius);padding:26px;
+  display:flex;flex-direction:column;
+}
+.testi-stars{color:var(--neon);font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;}
+.testi-card blockquote{color:var(--white);font-size:0.92rem;line-height:1.55;font-weight:400;flex:1;}
+.testi-author{display:flex;align-items:center;gap:10px;margin-top:16px;}
+.testi-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:0.85rem;color:#07070D;
+}
+.testi-author div{font-size:0.82rem;font-weight:600;}
+.testi-author small{display:block;color:var(--muted);font-weight:400;font-size:0.75rem;}
+
+/* FAQ */
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.faq-item{
+  background:var(--bg-card);border:1px solid var(--line2);
+  border-radius:var(--radius-sm);overflow:hidden;
+}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;color:inherit;font-family:inherit;
+  padding:18px 22px;display:flex;justify-content:space-between;
+  align-items:center;cursor:pointer;font-weight:600;font-size:0.95rem;
+  transition:background .2s;user-select:none;
+}
+.faq-q:hover{background:rgba(255,255,255,0.02);}
+.faq-q .arrow{font-size:0.7rem;color:var(--gold);transition:transform .25s;}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg);}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .3s ease, padding .3s ease;
+  padding:0 22px;color:var(--muted);font-size:0.88rem;line-height:1.6;
+}
+.faq-item.open .faq-a{max-height:300px;padding:0 22px 18px;}
+
+/* CONTATO */
+.contato{background:var(--bg2);border-top:1px solid var(--line);}
+.contact-grid{display:grid;gap:40px;grid-template-columns:1fr;}
+@media(min-width:860px){.contact-grid{grid-template-columns:0.9fr 1.1fr;}}
+.contact-info h2{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:14px;}
+.contact-info p{color:var(--muted);margin-bottom:24px;max-width:400px;line-height:1.6;}
+.c-info{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:0.92rem;}
+.c-info .ic{width:38px;height:38px;border-radius:10px;border:1px solid var(--line2);background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.c-info a{color:var(--gold);transition:color .2s;}
+.c-info a:hover{color:var(--gold-light);}
+form{
+  background:var(--bg-card);border:1px solid var(--line2);
+  border-radius:var(--radius);padding:28px;display:grid;gap:14px;
+}
+form label{font-size:0.8rem;color:var(--muted);margin-bottom:4px;display:block;font-weight:500;}
+form input, form select, form textarea{
+  width:100%;padding:12px 14px;border-radius:var(--radius-sm);
+  background:var(--bg);border:1px solid var(--line2);
+  color:var(--white);font-family:'Inter',sans-serif;font-size:0.92rem;
+  transition:border-color .2s;
+}
+form input:focus, form select:focus, form textarea:focus{
+  outline:none;border-color:var(--gold);
+}
+form textarea{resize:vertical;min-height:80px;}
+form button{margin-top:4px;}
+
+/* ===== ESQUENTA BLACK FRIDAY ===== */
+.bf-bar{
+  background:linear-gradient(90deg,#5B21B6,#7C3AED 45%,#22D3EE);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  gap:10px;flex-wrap:wrap;padding:7px 16px;text-align:center;
+  font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+}
+.bf-bar .dot{width:6px;height:6px;border-radius:50%;background:#22D3EE;animation:blink 1s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
+.bf-clock{display:inline-flex;gap:5px;font-variant-numeric:tabular-nums;}
+.bf-clock b{background:rgba(0,0,0,0.45);border-radius:6px;padding:2px 7px;font-size:0.72rem;color:#22D3EE;font-weight:800;}
+.hero{padding-top:calc(var(--header-h, 110px) + 56px);}
+.hero-tag{
+  background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(34,211,238,0.12));
+  border-color:rgba(34,211,238,0.35);color:var(--neon);
+}
+.hero h1 span{
+  background:linear-gradient(135deg,var(--gold-light),var(--neon));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.btn-pulse{animation:pulseGlow 2.2s ease-out infinite;}
+@keyframes pulseGlow{
+  0%,100%{box-shadow:0 0 24px rgba(139,92,246,0.35);}
+  50%{box-shadow:0 0 0 14px rgba(139,92,246,0);}
+}
+.off-badge{
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.66rem;
+  padding:3px 9px;border-radius:100px;letter-spacing:0.02em;white-space:nowrap;
+  background:linear-gradient(135deg,#22D3EE,var(--gold-light));color:#050509;
+}
+.old-price{color:var(--muted);font-size:0.84rem;text-decoration:line-through;margin-top:14px;display:block;font-weight:500;}
+.old-price b{color:var(--neon);text-decoration:none;font-weight:700;}
+.plano-price{margin:2px 0 6px;}
+.per-month{font-size:0.8rem;font-weight:600;color:var(--neon);margin:0 0 8px;}
+.plano-card.featured{box-shadow:0 0 50px rgba(139,92,246,0.22);}
+.plano-card.featured .tag-pop{background:linear-gradient(135deg,#22D3EE,var(--gold-light));}
+.plano-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+
+/* PROMO BANNER */
+.promo-banner{
+  background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(34,211,238,0.07));
+  border:1px solid rgba(139,92,246,0.35);border-radius:24px;
+  padding:48px 36px;text-align:center;
+  position:relative;overflow:hidden;
+  box-shadow:inset 0 0 70px rgba(139,92,246,0.12);
+}
+.promo-banner h2{font-size:clamp(1.4rem,4vw,2.2rem);margin-bottom:10px;}
+.promo-banner h2 span{color:var(--neon);}
+.promo-banner p{color:var(--muted);max-width:500px;margin:0 auto 24px;font-size:1rem;}
+.bf-countdown{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px 0 26px;}
+.bf-count{
+  min-width:78px;padding:12px 10px;border-radius:12px;
+  background:rgba(5,5,9,0.55);border:1px solid var(--line);
+}
+.bf-count b{display:block;font-family:'Montserrat',sans-serif;font-size:1.7rem;font-weight:800;color:var(--neon);line-height:1;}
+.bf-count span{display:block;margin-top:6px;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+@media(max-width:600px){
+  .bf-bar{font-size:0.62rem;gap:7px;}
+  .bf-bar .bf-bar-sub{display:none;}
+  .bf-clock b{font-size:0.66rem;padding:2px 5px;}
+  .hero{padding-top:calc(var(--header-h, 120px) + 32px);}
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--line);padding:40px 0 28px;
+}
+.footer-grid{display:grid;gap:32px;grid-template-columns:1fr;margin-bottom:28px;}
+@media(min-width:700px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;}}
+.footer-brand .logo{margin-bottom:12px;}
+.footer-brand p{color:var(--muted);font-size:0.85rem;max-width:300px;line-height:1.5;}
+.footer-col h3{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;color:var(--white);}
+.footer-col a{display:block;color:var(--muted);font-size:0.85rem;margin-bottom:8px;transition:color .2s;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--line2);color:var(--muted);font-size:0.8rem;}
+
+/* WHATSAPP FLOAT */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:90;
+  width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 30px rgba(37,211,102,0.4);
+  transition:transform .2s, box-shadow .2s;
+}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 12px 40px rgba(37,211,102,0.5);}
+
+/* ===== RESPONSIVO / ORGANIZAÇÃO MOBILE ===== */
+section[id]{scroll-margin-top:calc(var(--header-h, 110px) + 16px);}
+@media(max-width:900px){
+  .hero-grid{gap:32px;}
+  .hero-text{padding:28px 24px;}
+  .hero-visual{padding:20px;}
+  .contact-grid{gap:28px;}
+}
+@media(max-width:860px){
+  nav{padding:12px 18px;}
+  .logo img{height:40px;}
+  .nav-links.open{border-top:1px solid var(--line2);}
+}
+@media(max-width:700px){
+  section{padding:64px 0;}
+  .section-head{margin-bottom:32px;}
+  .section-head h2{font-size:clamp(1.55rem,6vw,2.2rem);}
+  .hero{padding-bottom:56px;}
+  .hero h1{font-size:clamp(2rem,8.5vw,2.8rem);margin:16px 0 14px;}
+  .hero p{font-size:1rem;margin-bottom:24px;}
+  .hero-text{padding:24px 18px;border-radius:16px;}
+  .hero-stats{gap:24px;margin-top:32px;}
+  .cat-grid{gap:12px;}
+  .cat-card{padding:18px 12px;}
+  .cat-icon{font-size:1.9rem;}
+  .plano-card{padding:26px 20px;}
+  .diff-card{padding:22px 18px;}
+  .testi-card{padding:22px 18px;}
+  .faq-q{padding:16px 18px;font-size:0.9rem;}
+  .faq-a{padding:0 18px;font-size:0.85rem;}
+  .faq-item.open .faq-a{padding:0 18px 16px;}
+  form{padding:22px 18px;}
+  form input, form select, form textarea{font-size:16px;}
+  .promo-banner{padding:32px 20px;border-radius:18px;}
+  .bf-countdown{gap:8px;}
+  .bf-count{min-width:0;flex:1;padding:10px 6px;}
+  .bf-count b{font-size:1.4rem;}
+  .footer-grid{gap:24px;}
+  .footer-brand p{max-width:100%;}
+  footer{padding-bottom:78px;}
+  .wa-float{width:52px;height:52px;bottom:18px;right:18px;}
+}
+@media(max-width:420px){
+  .wrap{padding:0 16px;}
+  .hero h1{font-size:1.9rem;}
+  .hero-actions{flex-direction:column;}
+  .hero-actions .btn{width:100%;justify-content:center;}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .hero-stat .num{font-size:1.35rem;}
+  .hero-stat span{font-size:0.72rem;}
+  .plano-price{font-size:2.2rem;}
+  .off-badge{font-size:0.6rem;padding:3px 7px;}
+  .bf-bar{padding:6px 10px;}
+  .bf-count b{font-size:1.2rem;}
+  .bf-count span{font-size:0.55rem;letter-spacing:0.06em;}
+  .promo-banner h2{font-size:1.35rem;}
+}
+
+@media(max-width:520px){
+  .bf-brand{display:none;}
+  .bf-bar{font-size:0.6rem;}
+}
+
+/* CTA fixa mobile */
+.mobile-cta{display:none;}
+@media(max-width:700px){
+  .mobile-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:95;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(5,5,9,0.97);backdrop-filter:blur(12px);
+    border-top:1px solid var(--line);
+  }
+  .mobile-cta-info span{display:block;font-size:0.64rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);font-weight:700;}
+  .mobile-cta-info b{font-family:'Montserrat',sans-serif;font-size:0.95rem;color:var(--white);}
+  .mobile-cta-info small{font-weight:600;color:var(--neon);font-size:0.68rem;}
+  .mobile-cta .btn{padding:10px 22px;font-size:0.82rem;white-space:nowrap;}
+  body{padding-bottom:64px;}
+  .wa-float{bottom:82px;}
+  footer{padding-bottom:96px;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none!important;}
+  .brands-track{animation:scroll 40s linear infinite!important;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bf-bar">
+    <span class="dot"></span>
+    <span>⚡ Esquenta Black Friday <span class="bf-brand">Elite PLUS</span></span>
+    <span class="bf-bar-sub">termina em</span>
+    <span class="bf-clock" id="bfBarClock">--d --h --m --s</span>
+  </div>
+  <nav>
+    <a href="#" class="logo">
+      <img src="fotos/logo-eliteplus.png" alt="Elite PLUS" width="360" height="214" onerror="this.style.display='none'">
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#canais">Canais</a>
+      <a href="#planos">Planos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <a class="btn btn-gold nav-cta" href="https://wa.me/5527996629393" target="_blank" rel="noopener">Assine Agora</a>
+    <button class="mobile-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="hero-tag">⚡ Esquenta Black Friday · Vagas limitadas</span>
+      <h1>Sua TV por <span>streaming</span><br>com preço de Black Friday</h1>
+      <p>Centenas de canais, filmes, séries e esportes ao vivo em HD e 4K. Planos a partir de <b style="color:var(--neon)">R$13,32/mês</b> no plano anual — só até o fim da contagem.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold btn-pulse" href="https://wa.me/5527996629393?text=Ol%C3%A1!%20Quero%20aproveitar%20a%20oferta%20de%20Black%20Friday%20da%20Elite%20PLUS." target="_blank" rel="noopener">Aproveitar Oferta</a>
+        <a class="btn btn-outline" href="#planos">Ver Planos</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><p class="num">+850</p><span>Canais ao vivo</span></div>
+        <div class="hero-stat"><p class="num">+15K</p><span>Filmes e séries</span></div>
+        <div class="hero-stat"><p class="num">99%</p><span>Uptime garantido</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <span class="badge-top">🔥 Esquenta Black Friday</span>
+      <span class="badge-top2">⏳ Preços por tempo limitado</span>
+      <div class="card-mini">
+        <p>📺 Conteúdo exclusivo em tempo real</p>
+        <span>Esportes · Filmes · Séries · Novelas · Notícias</span>
+        <div class="devices">
+          <span>📱 Smartphone</span>
+          <span>💻 PC</span>
+          <span>📺 Smart TV</span>
+          <span>📟 TV Box</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<div class="brands">
+  <div class="brands-header"><span>— Principais plataformas e canais disponíveis —</span></div>
+  <div class="brands-outer">
+    <div class="brands-track">
+      <span class="brand-pill"><img src="fotos/logo-netflix.png" alt="Netflix">Netflix</span>
+      <span class="brand-pill"><img src="fotos/logo-primevideo.png" alt="Prime Video">Prime Video</span>
+      <span class="brand-pill"><img src="fotos/logo-globoplay.png" alt="Globoplay">Globoplay</span>
+      <span class="brand-pill"><img src="fotos/logo-disney.png" alt="Disney+">Disney+</span>
+      <span class="brand-pill"><img src="fotos/logo-hbo.png" alt="HBO Max">HBO Max</span>
+      <span class="brand-pill"><img src="fotos/logo-telecine.png" alt="Telecine">Telecine</span>
+      <span class="brand-pill"><img src="fotos/logo-spotify.png" alt="Spotify">Spotify</span>
+      <span class="brand-pill"><img src="fotos/logo-youtube.png" alt="YouTube">YouTube</span>
+      <span class="brand-pill"><img src="fotos/logo-star.png" alt="Star+">Star+</span>
+      <span class="brand-pill"><img src="fotos/logo-foxsports.png" alt="Fox Sports">Fox Sports</span>
+      <span class="brand-pill"><img src="fotos/logo-espn.png" alt="ESPN">ESPN</span>
+      <span class="brand-pill"><img src="fotos/logo-netflix.png" alt="Netflix">Netflix</span>
+      <span class="brand-pill"><img src="fotos/logo-primevideo.png" alt="Prime Video">Prime Video</span>
+      <span class="brand-pill"><img src="fotos/logo-globoplay.png" alt="Globoplay">Globoplay</span>
+      <span class="brand-pill"><img src="fotos/logo-disney.png" alt="Disney+">Disney+</span>
+      <span class="brand-pill"><img src="fotos/logo-hbo.png" alt="HBO Max">HBO Max</span>
+      <span class="brand-pill"><img src="fotos/logo-telecine.png" alt="Telecine">Telecine</span>
+      <span class="brand-pill"><img src="fotos/logo-spotify.png" alt="Spotify">Spotify</span>
+      <span class="brand-pill"><img src="fotos/logo-youtube.png" alt="YouTube">YouTube</span>
+      <span class="brand-pill"><img src="fotos/logo-star.png" alt="Star+">Star+</span>
+      <span class="brand-pill"><img src="fotos/logo-foxsports.png" alt="Fox Sports">Fox Sports</span>
+      <span class="brand-pill"><img src="fotos/logo-espn.png" alt="ESPN">ESPN</span>
+    </div>
+  </div>
+</div>
+
+<!-- CANAIS -->
+<section class="canais" id="canais">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-label">Nossos Canais</span>
+      <h2>Mais de 850 canais organizados por categoria</h2>
+      <p>Conteúdo para toda a família, do esporte ao entretenimento, 24 horas por dia.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card"><span class="cat-icon">⚽</span><h3>Esportes</h3><span>+120 canais</span></div>
+      <div class="cat-card"><span class="cat-icon">🎬</span><h3>Filmes</h3><span>+20 000 Filmes</span></div>
+      <div class="cat-card"><span class="cat-icon">📺</span><h3>Séries</h3><span>+10 000 Séries</span></div>
+      <div class="cat-card"><span class="cat-icon">📰</span><h3>Notícias</h3><span>+80 canais</span></div>
+      <div class="cat-card"><span class="cat-icon">🐻</span><h3>Infantil</h3><span>+60 canais</span></div>
+      <div class="cat-card"><span class="cat-icon">🎵</span><h3>Música</h3><span>+50 canais</span></div>
+      <div class="cat-card"><span class="cat-icon">🌍</span><h3>Documentários</h3><span>+70 canais</span></div>
+      <div class="cat-card"><span class="cat-icon">🔞</span><h3>+18</h3><span>+40 canais</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
+      <span class="section-label" style="justify-content:center;">Planos Black Friday</span>
+      <h2>Preço de esquenta em todos os planos</h2>
+      <p>Condições válidas até o fim da contagem. Teste grátis de 24h sem compromisso.</p>
+    </div>
+    <div class="planos-grid">
+      <div class="plano-card">
+        <div class="plano-top"><div class="plano-name">Mensal</div><span class="off-badge">OFERTA</span></div>
+        <span class="old-price">de <b>R$29,99</b> por</span>
+        <div class="plano-price">R$29,90 <small>/mês</small></div>
+        <div class="plano-desc">Perfeito para quem quer testar o serviço.</div>
+        <ul class="plano-feats">
+          <li>+850 canais ao vivo</li>
+          <li>+15K filmes e séries</li>
+          <li>Qualidade HD</li>
+          <li>1 tela simultânea</li>
+          <li>Suporte via WhatsApp</li>
+        </ul>
+        <a class="btn btn-outline" href="https://mpago.li/1nefSMv" target="_blank" rel="noopener">Assinar Agora</a>
+      </div>
+      <div class="plano-card">
+        <div class="plano-top"><div class="plano-name">Trimestral</div><span class="off-badge">-33% OFF</span></div>
+        <span class="old-price">de <b>R$89,99</b> por</span>
+        <div class="plano-price">R$59,90 <small>/trimestre</small></div>
+        <p class="per-month">equivale a R$19,97/mês</p>
+        <div class="plano-desc">O plano favorito dos nossos clientes.</div>
+        <ul class="plano-feats">
+          <li>+850 canais ao vivo</li>
+          <li>+15K filmes e séries</li>
+          <li>Qualidade HD e 4K</li>
+          <li>2 telas simultâneas</li>
+          <li>Suporte VIP prioritário</li>
+          <li>Catálogo +18 (opcional)</li>
+        </ul>
+        <a class="btn btn-outline" href="https://mpago.la/2kmHgLn" target="_blank" rel="noopener">Assinar Agora</a>
+      </div>
+      <div class="plano-card">
+        <div class="plano-top"><div class="plano-name">Semestral</div><span class="off-badge">-44% OFF</span></div>
+        <span class="old-price">de <b>R$179,99</b> por</span>
+        <div class="plano-price">R$99,90 <small>/semestre</small></div>
+        <p class="per-month">equivale a R$16,65/mês</p>
+        <div class="plano-desc">Economia e mais benefícios.</div>
+        <ul class="plano-feats">
+          <li>+850 canais ao vivo</li>
+          <li>+15K filmes e séries</li>
+          <li>Qualidade HD e 4K</li>
+          <li>3 telas simultâneas</li>
+          <li>Suporte VIP prioritário</li>
+          <li>Catálogo +18 (opcional)</li>
+          <li>Guia de programação (EPG)</li>
+        </ul>
+        <a class="btn btn-outline" href="https://mpago.la/1UthrKx" target="_blank" rel="noopener">Assinar Agora</a>
+      </div>
+      <div class="plano-card featured">
+        <span class="tag-pop">Mais Vendido</span>
+        <div class="plano-top"><div class="plano-name">Anual</div><span class="off-badge">-56% OFF</span></div>
+        <span class="old-price">de <b>R$359,99</b> por</span>
+        <div class="plano-price">R$159,90 <small>/ano</small></div>
+        <p class="per-month">equivale a R$13,32/mês</p>
+        <div class="plano-desc">Máxima economia para quem fica o ano todo.</div>
+        <ul class="plano-feats">
+          <li>+850 canais ao vivo</li>
+          <li>+15K filmes e séries</li>
+          <li>Qualidade HD e 4K</li>
+          <li>4 telas simultâneas</li>
+          <li>Suporte VIP prioritário</li>
+          <li>Catálogo +18 (opcional)</li>
+          <li>Guia de programação (EPG)</li>
+        </ul>
+        <a class="btn btn-gold" href="https://mpago.la/2CmvH9X" target="_blank" rel="noopener">Assinar Agora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section style="background:var(--bg2);border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
+      <span class="section-label" style="justify-content:center;">Por que Elite PLUS</span>
+      <h2>Por que escolher a Elite PLUS?</h2>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card"><span class="ico">⚡</span><h3>Teste Grátis</h3><p>Teste 24 horas sem compromisso antes de assinar.</p></div>
+      <div class="diff-card"><span class="ico">📱</span><h3>Multi-dispositivos</h3><p>Funciona em Smart TV, TV Box, celular, tablet e PC.</p></div>
+      <div class="diff-card"><span class="ico">💬</span><h3>Suporte VIP</h3><p>Atendimento rápido e personalizado pelo WhatsApp.</p></div>
+      <div class="diff-card"><span class="ico">🛡️</span><h3>Estabilidade</h3><p>Servidores dedicados com 99% de uptime garantido.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos" id="depoimentos">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
+      <span class="section-label" style="justify-content:center;">Depoimentos</span>
+      <h2>O que nossos clientes dizem</h2>
+    </div>
+    <div class="testi-slider" id="testiSlider" role="group" aria-roledescription="carrossel" aria-label="Depoimentos de clientes">
+      <div class="testi-slide active" aria-roledescription="slide" aria-label="Depoimento 1 de 8">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <blockquote>"Melhor serviço de TV por streaming que já testei. A qualidade HD é impecável e o suporte responde na hora."</blockquote>
+          <div class="testi-author"><div class="testi-avatar">R</div><div>Rafael<small>Plano Anual · há 1 ano</small></div></div>
+        </div>
+      </div>
+      <div class="testi-slide" aria-roledescription="slide" aria-label="Depoimento 2 de 8">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <blockquote>"Assinei o plano trimestral e não me arrependo. Meus filhos amam os canais infantis e eu vejo todos os jogos do meu time."</blockquote>
+          <div class="testi-author"><div class="testi-avatar">A</div><div>Ana<small>Plano Trimestral · há 3 meses</small></div></div>
+        </div>
+      </div>
+      <div class="testi-slide" aria-roledescription="slide" aria-label="Depoimento 3 de 8">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <blockquote>"Já recomendei para toda a família. Canais estáveis, sem engasgos e o preço cabe no bolso. Sensacional!"</blockquote>
+          <div class="testi-author"><div class="testi-avatar">C</div><div>Carlos<small>Plano Anual · há 2 anos</small></div></div>
+        </div>
+      </div>
+      <div class="testi-slide" aria-roledescription="slide" aria-label="Depoimento 4 de 8">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <blockquote>"Instalei na Smart TV em menos de 5 minutos e já estava assistindo. O suporte no WhatsApp me ajudou passo a passo."</blockquote>
+          <div class="testi-author"><div class="testi-avatar">J</div><div>Juliana<small>Plano Semestral · há 4 meses</small></div></div>
+        </div>
+      </div>
+      <div class="testi-slide" aria-roledescription="slide" aria-label="Depoimento 5 de 8">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <blockquote>"Assisto aos jogos do Brasileirão em 4K sem travar. Vale cada centavo, principalmente no plano anual."</blockquote>
+          <div class="testi-author"><div class="testi-avatar">M</div><div>Marcos<small>Plano Anual · há 8 meses</small></div></div>
+        </div>
+      </div>
+      <div class="testi-slide" aria-roledescription="slide" aria-label="Depoimento 6 de 8">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <blockquote>"O teste grátis me convenceu. No mesmo dia já assinei e hoje uso na TV da sala e no celular ao mesmo tempo."</blockquote>
+          <div class="testi-author"><div class="testi-avatar">P</div><div>Patrícia<small>Plano Trimestral · há 2 meses</small></div></div>
+        </div>
+      </div>
+      <div class="testi-slide" aria-roledescription="slide" aria-label="Depoimento 7 de 8">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <blockquote>"Catálogo enorme de filmes e séries, e os lançamentos chegam rápido. Cancelei dois serviços de streaming e economizei."</blockquote>
+          <div class="testi-author"><div class="testi-avatar">B</div><div>Bruno<small>Plano Anual · há 6 meses</small></div></div>
+        </div>
+      </div>
+      <div class="testi-slide" aria-roledescription="slide" aria-label="Depoimento 8 de 8">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <blockquote>"Atendimento rápido de verdade, resolvem tudo pelo WhatsApp. Já indiquei para minhas irmãs e todas assinaram."</blockquote>
+          <div class="testi-author"><div class="testi-avatar">F</div><div>Fernanda<small>Plano Semestral · há 5 meses</small></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-dots" id="testiDots">
+      <button class="testi-dot active" type="button" aria-label="Depoimento 1" aria-current="true"></button>
+      <button class="testi-dot" type="button" aria-label="Depoimento 2"></button>
+      <button class="testi-dot" type="button" aria-label="Depoimento 3"></button>
+      <button class="testi-dot" type="button" aria-label="Depoimento 4"></button>
+      <button class="testi-dot" type="button" aria-label="Depoimento 5"></button>
+      <button class="testi-dot" type="button" aria-label="Depoimento 6"></button>
+      <button class="testi-dot" type="button" aria-label="Depoimento 7"></button>
+      <button class="testi-dot" type="button" aria-label="Depoimento 8"></button>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<section style="padding:60px 0;">
+  <div class="wrap">
+    <div class="promo-banner">
+      <span class="section-label" style="justify-content:center;margin-bottom:14px;">Esquenta Black Friday</span>
+      <h2>⏳ O esquenta termina em <span>poucas horas</span></h2>
+      <p>Os preços de Black Friday valem só até o fim da contagem. Garanta o seu plano antes que volte ao valor normal.</p>
+      <div class="bf-countdown">
+        <div class="bf-count"><b id="bfD">00</b><span>dias</span></div>
+        <div class="bf-count"><b id="bfH">00</b><span>horas</span></div>
+        <div class="bf-count"><b id="bfM">00</b><span>min</span></div>
+        <div class="bf-count"><b id="bfS">00</b><span>seg</span></div>
+      </div>
+      <a class="btn btn-gold btn-pulse" href="https://wa.me/5527996629393?text=Ol%C3%A1!%20Quero%20garantir%20a%20oferta%20de%20Black%20Friday%20da%20Elite%20PLUS." target="_blank" rel="noopener">Garantir Minha Oferta</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
+      <span class="section-label" style="justify-content:center;">FAQ</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">Como funciona o teste grátis?<span class="arrow">▼</span></button>
+        <div class="faq-a">Você entra em contato conosco pelo WhatsApp, solicitamos alguns dados básicos e liberamos o acesso por 24 horas para testar todos os canais sem compromisso.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">Quais dispositivos são compatíveis?<span class="arrow">▼</span></button>
+        <div class="faq-a">Funciona em Smart TVs (Samsung, LG, Android), TV Box (Xiaomi, MXQ, etc.), celulares Android e iPhone (iOS), tablets, computadores (via navegador) e reprodutores como IPTV Smarters, TiviMate e outros.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">Precisa de antena ou parabólica?<span class="arrow">▼</span></button>
+        <div class="faq-a">Não! Funciona 100% via internet (streaming). Basta ter uma conexão estável com velocidade mínima de 10 Mbps.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">Como faço para assinar?<span class="arrow">▼</span></button>
+        <div class="faq-a">É simples: clique no botão "Assinar Agora" do plano desejado, você será direcionado ao nosso WhatsApp, combinamos o pagamento e liberamos seu acesso na hora.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">Até quando valem os preços de Black Friday?<span class="arrow">▼</span></button>
+        <div class="faq-a">Os valores promocionais do Esquenta Black Friday valem até o fim da contagem regressiva. Depois disso, os planos voltam ao preço normal.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">Quais as formas de pagamento?<span class="arrow">▼</span></button>
+        <div class="faq-a">Aceitamos PIX, transferência bancária e cartão de crédito. O acesso é liberado imediatamente após a confirmação do pagamento.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">Tem canais +18?<span class="arrow">▼</span></button>
+        <div class="faq-a">Sim, oferecemos canais adultos como categoria separada, disponível mediante verificação de maioridade.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <span class="section-label">Contato</span>
+      <h2 style="margin-top:14px;">Vamos conversar?</h2>
+      <p>Tire suas dúvidas, solicite seu teste grátis ou assine agora mesmo. Respondemos em poucos minutos.</p>
+      <div class="c-info"><span class="ic">📱</span> <a href="https://wa.me/5527996629393" target="_blank" rel="noopener">WhatsApp: (27) 99662-9393</a></div>
+      <div class="c-info"><span class="ic">📧</span> <a href="mailto:contato@eliteplus.com.br">contato@eliteplus.com.br</a></div>
+      <div class="c-info"><span class="ic">⏰</span> Suporte: Seg a Dom - 8h às 23h</div>
+    </div>
+    <form onsubmit="event.preventDefault(); var msg = this.msg.value.trim(); window.open('https://wa.me/5527996629393?text=' + encodeURIComponent('Olá! Meu nome é ' + this.nome.value + ', tenho interesse no plano ' + (this.plano.value || 'em saber mais') + '. Meu WhatsApp é ' + (this.tel.value || 'informarei depois') + '.' + (msg ? ' Mensagem: ' + msg : '')), '_blank');">
+      <div>
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" required placeholder="Seu nome">
+      </div>
+      <div>
+        <label for="tel">Seu WhatsApp</label>
+        <input id="tel" name="tel" type="tel" placeholder="(27) 90000-0000">
+      </div>
+      <div>
+        <label for="plano">Plano de interesse</label>
+        <select id="plano" name="plano">
+          <option value="">Escolha um plano</option>
+          <option>Mensal - R$29,90</option>
+          <option>Trimestral - R$59,90</option>
+          <option>Semestral - R$99,90</option>
+          <option>Anual - R$159,90</option>
+          <option>Quero teste grátis</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div>
+        <label for="msg">Mensagem (opcional)</label>
+        <textarea id="msg" name="msg" placeholder="Sua mensagem..."></textarea>
+      </div>
+      <button class="btn btn-wa" type="submit">Enviar para WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img src="fotos/logo-eliteplus.png" alt="Elite PLUS" width="360" height="214" onerror="this.style.display='none'">
+        </a>
+        <p>A melhor experiência em TV por streaming com centenas de canais, filmes e séries em todo o Brasil.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Acesso Rápido</h3>
+        <a href="#canais">Canais</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer-col">
+        <h3>Planos</h3>
+        <a href="https://mpago.li/1nefSMv" target="_blank" rel="noopener">Mensal</a>
+        <a href="https://mpago.la/2kmHgLn" target="_blank" rel="noopener">Trimestral</a>
+        <a href="https://mpago.la/1UthrKx" target="_blank" rel="noopener">Semestral</a>
+        <a href="https://mpago.la/2CmvH9X" target="_blank" rel="noopener">Anual</a>
+      </div>
+      <div class="footer-col">
+        <h3>Suporte</h3>
+        <a href="https://wa.me/5527996629393" target="_blank" rel="noopener">Fale Conosco</a>
+        <a href="https://wa.me/5527996629393?text=Ol%C3%A1!%20Quero%20meu%20teste%20gr%C3%A1tis%20de%2024h%20da%20Elite%20PLUS." target="_blank" rel="noopener">Teste Grátis</a>
+      </div>
+    </div>
+    <div class="footer-bottom">Elite PLUS © 2026 - Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5527996629393" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#06170D"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.65 1.44 5.23L2 22l4.99-1.51a9.87 9.87 0 0 0 5.05 1.38h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.78 14.06c-.24.68-1.4 1.3-1.93 1.36-.5.06-1.08.29-3.7-.77-3.12-1.25-5.13-4.44-5.29-4.65-.16-.21-1.26-1.68-1.26-3.2 0-1.52.8-2.27 1.08-2.58.28-.31.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.68.53.24.6.83 2.07.9 2.22.07.15.12.33.02.54-.1.21-.15.33-.3.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.28 1.65 2.07 1.14 1.02 2.1 1.34 2.39 1.49.29.15.46.13.63-.08.17-.2.72-.83.91-1.12.19-.28.38-.23.63-.14.26.1 1.63.78 1.91.92.28.14.46.21.53.33.07.12.07.68-.17 1.36Z"/></svg>
+</a>
+
+<div class="mobile-cta">
+  <div class="mobile-cta-info">
+    <span>Plano Anual · Mais Vendido</span>
+    <b>R$159,90 <small>· R$13,32/mês</small></b>
+  </div>
+  <a class="btn btn-gold" href="https://mpago.la/2CmvH9X" target="_blank" rel="noopener">Assinar</a>
+</div>
+
+<script>
+function toggleNav(){
+  var nl = document.getElementById('navLinks');
+  var open = nl.classList.toggle('open');
+  var btn = document.querySelector('.mobile-toggle');
+  if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click', function(){
+    document.getElementById('navLinks').classList.remove('open');
+    var btn = document.querySelector('.mobile-toggle');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  });
+});
+function toggleFaq(el){
+  var item = el.closest('.faq-item');
+  var open = item.classList.toggle('open');
+  el.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+// Acabamento de acessibilidade (FAQ, carrossel e menu)
+document.querySelectorAll('.faq-item').forEach(function(item){
+  var b = item.querySelector('.faq-q');
+  if (b) b.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+});
+document.querySelectorAll('.brands-track .brand-pill').forEach(function(el, i){
+  if (i >= 11) el.setAttribute('aria-hidden', 'true');
+});
+var navToggle = document.querySelector('.mobile-toggle');
+if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+// Esquenta Black Friday - contagem regressiva
+(function(){
+  var DEADLINE = new Date('2026-11-14T18:00:00-03:00').getTime();
+  var pad = function(n){ return String(n).padStart(2,'0'); };
+  var expired = false;
+  function tick(){
+    var diff = DEADLINE - Date.now();
+    var bar = document.getElementById('bfBarClock');
+    if (diff <= 0){
+      if (!expired){
+        expired = true;
+        if (bar) bar.textContent = 'Oferta encerrada';
+        var cd = document.querySelector('.bf-countdown');
+        if (cd) cd.innerHTML = '<div class="bf-count"><b style="font-size:1rem">ENCERRADA</b><span>black friday</span></div>';
+      }
+      return;
+    }
+    var d = Math.floor(diff/86400000),
+        h = Math.floor((diff%86400000)/3600000),
+        m = Math.floor((diff%3600000)/60000),
+        s = Math.floor((diff%60000)/1000);
+    if (bar) bar.textContent = pad(d)+'d '+pad(h)+'h '+pad(m)+'m '+pad(s)+'s';
+    var map = {bfD:d, bfH:h, bfM:m, bfS:s};
+    for (var id in map){ var el = document.getElementById(id); if (el) el.textContent = pad(map[id]); }
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+// Mantém o hero abaixo do header fixo (barra BF + nav) em qualquer tela
+(function(){
+  function syncHeader(){
+    var h = document.querySelector('header').offsetHeight;
+    document.documentElement.style.setProperty('--header-h', h + 'px');
+  }
+  syncHeader();
+  window.addEventListener('load', syncHeader);
+  window.addEventListener('resize', syncHeader);
+  if (window.ResizeObserver) new ResizeObserver(syncHeader).observe(document.querySelector('header'));
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script>
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefersReduced && window.gsap){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.timeline({defaults:{ease:'power3.out'}})
+    .from('.hero-tag',{opacity:0,y:16,duration:.6})
+    .from('.hero h1',{opacity:0,y:28,duration:.7},'-=.35')
+    .from('.hero p',{opacity:0,y:20,duration:.6},'-=.4')
+    .from('.hero-actions .btn',{opacity:0,y:16,duration:.5,stagger:.12},'-=.3')
+    .from('.hero-stat',{opacity:0,y:16,duration:.5,stagger:.1},'-=.25')
+    .from('.hero-visual',{opacity:0,scale:.94,duration:.8},'-=.6');
+  gsap.utils.toArray('.section-head').forEach(el=>{
+    gsap.from(el,{opacity:0,y:30,duration:.7,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%'}});
+  });
+  gsap.from('.cat-card',{opacity:0,y:24,duration:.55,stagger:.06,ease:'power3.out',scrollTrigger:{trigger:'.cat-grid',start:'top 85%'}});
+  gsap.from('.plano-card',{opacity:0,y:30,duration:.6,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'.planos-grid',start:'top 85%'}});
+  gsap.from('.diff-card',{opacity:0,y:24,duration:.55,stagger:.08,ease:'power3.out',scrollTrigger:{trigger:'.diff-grid',start:'top 85%'}});
+  gsap.from('.testi-slider',{opacity:0,y:24,duration:.55,ease:'power3.out',scrollTrigger:{trigger:'.testi-slider',start:'top 85%'}});
+  gsap.from('.faq-item',{opacity:0,y:20,duration:.5,stagger:.08,ease:'power3.out',scrollTrigger:{trigger:'.faq-list',start:'top 85%'}});
+  gsap.from('.promo-banner > *',{opacity:0,y:20,duration:.6,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'.promo-banner',start:'top 85%'}});
+  gsap.from('.contact-info > *',{opacity:0,y:20,duration:.6,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'.contact-info',start:'top 85%'}});
+  gsap.from('form',{opacity:0,y:26,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'form',start:'top 85%'}});
+}
+
+// Depoimentos em apresentação automática (6s)
+(function(){
+  var slider = document.getElementById('testiSlider');
+  if (!slider) return;
+  var slides = slider.querySelectorAll('.testi-slide');
+  var dots = document.querySelectorAll('#testiDots .testi-dot');
+  if (slides.length < 2) return;
+
+  var current = 0;
+  var delay = 6000;
+  var timer = null;
+
+  function show(index){
+    current = (index + slides.length) % slides.length;
+    slides.forEach(function(s, i){
+      var active = i === current;
+      s.classList.toggle('active', active);
+      s.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+    dots.forEach(function(d, i){
+      var active = i === current;
+      d.classList.toggle('active', active);
+      if (active) d.setAttribute('aria-current', 'true');
+      else d.removeAttribute('aria-current');
+    });
+  }
+
+  function next(){ show(current + 1); }
+  function start(){ stop(); timer = setInterval(next, delay); }
+  function stop(){ if (timer) { clearInterval(timer); timer = null; } }
+
+  dots.forEach(function(dot, i){
+    dot.addEventListener('click', function(){
+      show(i);
+      start();
+    });
+  });
+
+  slider.addEventListener('mouseenter', stop);
+  slider.addEventListener('mouseleave', start);
+  slider.addEventListener('focusin', stop);
+  slider.addEventListener('focusout', function(e){
+    if (!slider.contains(e.relatedTarget)) start();
+  });
+  document.addEventListener('visibilitychange', function(){
+    if (document.hidden) stop(); else start();
+  });
+
+  show(0);
+  start();
+})();
+
+</script>
+</body>
+</html>
