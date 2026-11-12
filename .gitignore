@@ -4,6 +4,9 @@ _originais/
 # Notas internas do projeto (não publicar)
 AGENTS.md
 
+# Histórico da conversa (não publicar)
+historicoopencode/
+
 # Python
 __pycache__/
 *.py[cod]
