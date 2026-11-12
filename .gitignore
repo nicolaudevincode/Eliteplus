@@ -1,6 +1,9 @@
 ﻿# Arquivos originais pesados (fora do site)
 _originais/
 
+# Notas internas do projeto (não publicar)
+AGENTS.md
+
 # Python
 __pycache__/
 *.py[cod]
