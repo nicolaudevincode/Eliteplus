@@ -608,17 +608,19 @@ section[id]{scroll-margin-top:calc(var(--header-h, 110px) + 16px);}
   footer{padding-bottom:96px;}
 }
 
-/* Textos que aparecem e desaparecem conforme a rolagem */
-.reveal{
-  opacity:0;transform:translateY(26px);
-  transition:opacity .55s ease,transform .7s cubic-bezier(.22,.9,.3,1);
-  will-change:opacity,transform;
+/* Letras/palavras que aparecem e desaparecem conforme a rolagem */
+.rv-w{
+  display:inline-block;opacity:0;
+  transform:translateY(18px);filter:blur(7px);
+  transition:opacity .55s ease,transform .65s cubic-bezier(.22,.9,.3,1),filter .5s ease;
+  will-change:opacity,transform,filter;
 }
-.reveal.is-in{opacity:1;transform:none;}
+.rv-in .rv-w{opacity:1;transform:none;filter:blur(0);}
 
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   *{transition:none!important;}
+  .rv-w{transition:opacity .45s ease!important;transform:none!important;filter:none!important;}
   .brands-track{animation-play-state:running!important;}
 }
 </style>
@@ -1216,27 +1218,51 @@ if(!prefersReduced && window.gsap){
   gsap.from('form',{opacity:0,y:26,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'form',start:'top 85%'}});
 }
 
-// Textos aparecem/desaparecem conforme a rolagem (funciona em qualquer aparelho)
+// Palavras aparecem/desaparecem uma a uma conforme a rolagem
 (function(){
   if (!('IntersectionObserver' in window)) return;
   var alvos = document.querySelectorAll('.section-head .section-label, .section-head h2, .section-head p, .promo-banner h2, .promo-banner p, .contact-info h3');
   if (!alvos.length) return;
 
-  alvos.forEach(function(el){
-    el.classList.add('reveal');
-    var irmaos = Array.prototype.filter.call(el.parentNode.children, function(c){
-      return c.classList.contains('reveal');
+  var reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Quebra o texto em palavras animáveis, preservando negritos, spans coloridos e espaços
+  function dividir(el){
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+    var nos = [], n;
+    while ((n = walker.nextNode())) nos.push(n);
+    nos.forEach(function(no){
+      var txt = no.nodeValue;
+      if (!txt || !/\S/.test(txt)) return;
+      var frag = document.createDocumentFragment();
+      txt.split(/(\s+)/).forEach(function(parte){
+        if (!parte) return;
+        if (/^\s+$/.test(parte)){ frag.appendChild(document.createTextNode(' ')); return; }
+        var s = document.createElement('span');
+        s.className = 'rv-w';
+        s.textContent = parte;
+        frag.appendChild(s);
+        frag.appendChild(document.createTextNode(' '));
+      });
+      no.parentNode.replaceChild(frag, no);
     });
-    var pos = irmaos.indexOf(el);
-    if (pos > 0) el.style.transitionDelay = Math.min(pos * 90, 270) + 'ms';
+  }
+
+  alvos.forEach(function(el){
+    dividir(el);
+    var letras = el.querySelectorAll('.rv-w');
+    var passo = el.tagName === 'H2' ? 70 : (el.tagName === 'P' ? 32 : 55);
+    for (var i = 0; i < letras.length; i++){
+      letras[i].style.transitionDelay = Math.min(i * passo, 700) + 'ms';
+    }
   });
 
   var observer = new IntersectionObserver(function(entradas){
     entradas.forEach(function(e){
-      if (e.isIntersecting) e.target.classList.add('is-in');
-      else e.target.classList.remove('is-in');
+      if (e.isIntersecting) e.target.classList.add('rv-in');
+      else e.target.classList.remove('rv-in');
     });
-  }, {threshold: 0.15, rootMargin: '-30px 0px -70px 0px'});
+  }, {threshold: 0.2, rootMargin: '0px 0px -60px 0px'});
 
   alvos.forEach(function(el){ observer.observe(el); });
 })();
