@@ -1050,6 +1050,51 @@ document.querySelectorAll('.nav-links a').forEach(function(a){
     if (btn) btn.setAttribute('aria-expanded', 'false');
   });
 });
+// Rolagem suave para os links internos (com compensação do cabeçalho fixo)
+(function(){
+  function headerOffset(){
+    var h = document.querySelector('header');
+    return h ? h.getBoundingClientRect().height : 0;
+  }
+  function animateTo(targetY, duration){
+    var startY = window.pageYOffset || document.documentElement.scrollTop;
+    var dist = targetY - startY;
+    if (Math.abs(dist) < 2){ window.scrollTo(0, targetY); return; }
+    var t0 = null, done = false;
+    function step(ts){
+      if (t0 === null) t0 = ts;
+      var p = Math.min(1, (ts - t0) / duration);
+      var eased = p < 0.5 ? 4*p*p*p : 1 - Math.pow(-2*p + 2, 3) / 2;
+      window.scrollTo(0, startY + dist * eased);
+      if (p < 1) requestAnimationFrame(step);
+      else done = true;
+    }
+    requestAnimationFrame(step);
+    // garantia: se a animação for pausada pelo navegador, cai no destino
+    setTimeout(function(){
+      if (!done) window.scrollTo(0, targetY);
+    }, duration + 150);
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var href = link.getAttribute('href');
+      if (href === '#'){
+        e.preventDefault();
+        animateTo(0, 600);
+        if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+        return;
+      }
+      var el = document.getElementById(href.slice(1));
+      if (!el) return;
+      e.preventDefault();
+      var y = el.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - headerOffset() - 12;
+      y = Math.max(0, Math.min(y, document.documentElement.scrollHeight - window.innerHeight));
+      var dist = Math.abs(y - (window.pageYOffset || document.documentElement.scrollTop));
+      animateTo(y, Math.max(420, Math.min(850, dist * 0.45)));
+      if (history.replaceState) history.replaceState(null, '', href);
+    });
+  });
+})();
 function toggleFaq(el){
   var item = el.closest('.faq-item');
   var open = item.classList.toggle('open');
