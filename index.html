@@ -609,10 +609,11 @@ section[id]{scroll-margin-top:calc(var(--header-h, 110px) + 16px);}
 }
 
 /* Letras/palavras que aparecem e desaparecem conforme a rolagem */
+.rv-word{display:inline-block;white-space:nowrap;}
 .rv-w{
   display:inline-block;opacity:0;
-  transform:translateY(18px);filter:blur(7px);
-  transition:opacity .55s ease,transform .65s cubic-bezier(.22,.9,.3,1),filter .5s ease;
+  transform:translateY(26px) scale(.92);filter:blur(12px);
+  transition:opacity .65s ease,transform .8s cubic-bezier(.2,.85,.28,1),filter .65s ease;
   will-change:opacity,transform,filter;
 }
 .rv-in .rv-w{opacity:1;transform:none;filter:blur(0);}
@@ -620,7 +621,7 @@ section[id]{scroll-margin-top:calc(var(--header-h, 110px) + 16px);}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   *{transition:none!important;}
-  .rv-w{transition:opacity .45s ease!important;transform:none!important;filter:none!important;}
+  .rv-w{transition:opacity .55s ease!important;transform:none!important;filter:none!important;}
   .brands-track{animation-play-state:running!important;}
 }
 </style>
@@ -1218,16 +1219,21 @@ if(!prefersReduced && window.gsap){
   gsap.from('form',{opacity:0,y:26,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'form',start:'top 85%'}});
 }
 
-// Palavras aparecem/desaparecem uma a uma conforme a rolagem
+// Letras e palavras aparecem/desaparecem conforme a rolagem
 (function(){
   if (!('IntersectionObserver' in window)) return;
   var alvos = document.querySelectorAll('.section-head .section-label, .section-head h2, .section-head p, .promo-banner h2, .promo-banner p, .contact-info h3');
   if (!alvos.length) return;
 
-  var reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function criar(cls, texto){
+    var s = document.createElement('span');
+    s.className = cls;
+    if (texto) s.textContent = texto;
+    return s;
+  }
 
-  // Quebra o texto em palavras animáveis, preservando negritos, spans coloridos e espaços
-  function dividir(el){
+  // porLetra = true quebra em letras (títulos); false quebra em palavras (parágrafos)
+  function dividir(el, porLetra){
     var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
     var nos = [], n;
     while ((n = walker.nextNode())) nos.push(n);
@@ -1238,10 +1244,14 @@ if(!prefersReduced && window.gsap){
       txt.split(/(\s+)/).forEach(function(parte){
         if (!parte) return;
         if (/^\s+$/.test(parte)){ frag.appendChild(document.createTextNode(' ')); return; }
-        var s = document.createElement('span');
-        s.className = 'rv-w';
-        s.textContent = parte;
-        frag.appendChild(s);
+        if (!porLetra){
+          frag.appendChild(criar('rv-w', parte));
+          frag.appendChild(document.createTextNode(' '));
+          return;
+        }
+        var palavra = criar('rv-word');
+        parte.split('').forEach(function(letra){ palavra.appendChild(criar('rv-w', letra)); });
+        frag.appendChild(palavra);
         frag.appendChild(document.createTextNode(' '));
       });
       no.parentNode.replaceChild(frag, no);
@@ -1249,11 +1259,12 @@ if(!prefersReduced && window.gsap){
   }
 
   alvos.forEach(function(el){
-    dividir(el);
-    var letras = el.querySelectorAll('.rv-w');
-    var passo = el.tagName === 'H2' ? 70 : (el.tagName === 'P' ? 32 : 55);
-    for (var i = 0; i < letras.length; i++){
-      letras[i].style.transitionDelay = Math.min(i * passo, 700) + 'ms';
+    var porLetra = el.tagName === 'H2' || el.classList.contains('section-label');
+    dividir(el, porLetra);
+    var pecas = el.querySelectorAll('.rv-w');
+    var passo = porLetra ? 26 : 36;
+    for (var i = 0; i < pecas.length; i++){
+      pecas[i].style.transitionDelay = Math.min(i * passo, 900) + 'ms';
     }
   });
 
