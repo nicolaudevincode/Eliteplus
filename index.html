@@ -620,7 +620,7 @@ section[id]{scroll-margin-top:calc(var(--header-h, 110px) + 16px);}
 
 /* Brilho roxo passando pelas letras dos títulos */
 .glow-letra .rv-w{
-  animation:brilhoRoxo 4s linear infinite;
+  animation:brilhoRoxo 5s linear infinite;
   animation-play-state:paused;
 }
 .glow-letra.rv-in .rv-w{animation-play-state:running;}
@@ -635,7 +635,7 @@ section[id]{scroll-margin-top:calc(var(--header-h, 110px) + 16px);}
   html{scroll-behavior:auto;}
   *{transition:none!important;}
   .rv-w{transition:opacity .55s ease!important;transform:none!important;filter:none!important;}
-  .glow-letra .rv-w{animation-duration:5s!important;}
+  .glow-letra .rv-w{animation-duration:6.5s!important;}
   .brands-track{animation-play-state:running!important;}
 }
 </style>
@@ -1279,7 +1279,7 @@ if(!prefersReduced && window.gsap){
     var passo = porLetra ? 26 : 36;
     for (var i = 0; i < pecas.length; i++){
       pecas[i].style.transitionDelay = Math.min(i * passo, 900) + 'ms';
-      if (porLetra) pecas[i].style.animationDelay = (i * 45) + 'ms';
+      if (porLetra) pecas[i].style.animationDelay = (i * 58) + 'ms';
     }
     if (porLetra) el.classList.add('glow-letra');
   });
