@@ -633,9 +633,15 @@ section[id]{scroll-margin-top:calc(var(--header-h, 110px) + 16px);}
 
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
-  *{transition:none!important;}
-  .rv-w{transition:opacity .55s ease!important;transform:none!important;filter:none!important;}
-  .glow-letra .rv-w{animation-duration:6.5s!important;}
+  /* Mantém o efeito visível mesmo com "animações do Windows" desligadas,
+     apenas com menos deslocamento e sem desfoque */
+  .rv-w{
+    transform:translateY(12px)!important;filter:none!important;
+    transition-property:opacity,transform!important;
+    transition-duration:.6s!important;
+    transition-timing-function:cubic-bezier(.2,.85,.28,1)!important;
+  }
+  .rv-in .rv-w{transform:none!important;}
   .brands-track{animation-play-state:running!important;}
 }
 </style>
@@ -1292,6 +1298,16 @@ if(!prefersReduced && window.gsap){
   }, {threshold: 0.2, rootMargin: '0px 0px -60px 0px'});
 
   alvos.forEach(function(el){ observer.observe(el); });
+
+  // Rede de segurança: se algo visível ficar sem animar (navegador estranho), libera
+  setTimeout(function(){
+    alvos.forEach(function(el){
+      var b = el.getBoundingClientRect();
+      if (!el.classList.contains('rv-in') && b.top < window.innerHeight && b.bottom > 0) {
+        el.classList.add('rv-in');
+      }
+    });
+  }, 1200);
 })();
 
 // Depoimentos em apresentação automática (6s)
