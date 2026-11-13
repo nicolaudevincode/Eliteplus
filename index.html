@@ -242,16 +242,21 @@ nav{
   letter-spacing:0.14em;color:var(--muted);
 }
 .brands-outer{
-  overflow:hidden;display:flex;justify-content:center;
+  overflow:hidden;display:flex;justify-content:flex-start;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
 }
 .brands-track{
-  display:flex;gap:20px;width:max-content;
+  display:flex;width:max-content;
   animation:scroll 40s linear infinite;
-  padding:0 20px;
+  will-change:transform;
+}
+.brands-group{
+  display:flex;gap:20px;padding-right:20px;flex:none;
 }
 @keyframes scroll{
   from{transform:translateX(0);}
-  to{transform:translateX(-50%);}
+  to{transform:translateX(calc(-1 * var(--brands-shift, 50vw)));}
 }
 .brand-pill{
   display:flex;align-items:center;gap:8px;
@@ -606,7 +611,7 @@ section[id]{scroll-margin-top:calc(var(--header-h, 110px) + 16px);}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   *{transition:none!important;}
-  .brands-track{animation:scroll 40s linear infinite!important;}
+  .brands-track{animation-play-state:running!important;}
 }
 </style>
 </head>
@@ -673,29 +678,20 @@ section[id]{scroll-margin-top:calc(var(--header-h, 110px) + 16px);}
 <div class="brands">
   <div class="brands-header"><span>— Principais plataformas e canais disponíveis —</span></div>
   <div class="brands-outer">
-    <div class="brands-track">
-      <span class="brand-pill"><img src="fotos/logo-netflix.png" alt="Netflix">Netflix</span>
-      <span class="brand-pill"><img src="fotos/logo-primevideo.png" alt="Prime Video">Prime Video</span>
-      <span class="brand-pill"><img src="fotos/logo-globoplay.png" alt="Globoplay">Globoplay</span>
-      <span class="brand-pill"><img src="fotos/logo-disney.png" alt="Disney+">Disney+</span>
-      <span class="brand-pill"><img src="fotos/logo-hbo.png" alt="HBO Max">HBO Max</span>
-      <span class="brand-pill"><img src="fotos/logo-telecine.png" alt="Telecine">Telecine</span>
-      <span class="brand-pill"><img src="fotos/logo-spotify.png" alt="Spotify">Spotify</span>
-      <span class="brand-pill"><img src="fotos/logo-youtube.png" alt="YouTube">YouTube</span>
-      <span class="brand-pill"><img src="fotos/logo-star.png" alt="Star+">Star+</span>
-      <span class="brand-pill"><img src="fotos/logo-foxsports.png" alt="Fox Sports">Fox Sports</span>
-      <span class="brand-pill"><img src="fotos/logo-espn.png" alt="ESPN">ESPN</span>
-      <span class="brand-pill"><img src="fotos/logo-netflix.png" alt="Netflix">Netflix</span>
-      <span class="brand-pill"><img src="fotos/logo-primevideo.png" alt="Prime Video">Prime Video</span>
-      <span class="brand-pill"><img src="fotos/logo-globoplay.png" alt="Globoplay">Globoplay</span>
-      <span class="brand-pill"><img src="fotos/logo-disney.png" alt="Disney+">Disney+</span>
-      <span class="brand-pill"><img src="fotos/logo-hbo.png" alt="HBO Max">HBO Max</span>
-      <span class="brand-pill"><img src="fotos/logo-telecine.png" alt="Telecine">Telecine</span>
-      <span class="brand-pill"><img src="fotos/logo-spotify.png" alt="Spotify">Spotify</span>
-      <span class="brand-pill"><img src="fotos/logo-youtube.png" alt="YouTube">YouTube</span>
-      <span class="brand-pill"><img src="fotos/logo-star.png" alt="Star+">Star+</span>
-      <span class="brand-pill"><img src="fotos/logo-foxsports.png" alt="Fox Sports">Fox Sports</span>
-      <span class="brand-pill"><img src="fotos/logo-espn.png" alt="ESPN">ESPN</span>
+    <div class="brands-track" id="brandsTrack">
+      <div class="brands-group">
+        <span class="brand-pill"><img src="fotos/logo-netflix.png" alt="">Netflix</span>
+        <span class="brand-pill"><img src="fotos/logo-primevideo.png" alt="">Prime Video</span>
+        <span class="brand-pill"><img src="fotos/logo-globoplay.png" alt="">Globoplay</span>
+        <span class="brand-pill"><img src="fotos/logo-disney.png" alt="">Disney+</span>
+        <span class="brand-pill"><img src="fotos/logo-hbo.png" alt="">HBO Max</span>
+        <span class="brand-pill"><img src="fotos/logo-telecine.png" alt="">Telecine</span>
+        <span class="brand-pill"><img src="fotos/logo-spotify.png" alt="">Spotify</span>
+        <span class="brand-pill"><img src="fotos/logo-youtube.png" alt="">YouTube</span>
+        <span class="brand-pill"><img src="fotos/logo-star.png" alt="">Star+</span>
+        <span class="brand-pill"><img src="fotos/logo-foxsports.png" alt="">Fox Sports</span>
+        <span class="brand-pill"><img src="fotos/logo-espn.png" alt="">ESPN</span>
+      </div>
     </div>
   </div>
 </div>
@@ -1064,9 +1060,44 @@ document.querySelectorAll('.faq-item').forEach(function(item){
   var b = item.querySelector('.faq-q');
   if (b) b.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
 });
-document.querySelectorAll('.brands-track .brand-pill').forEach(function(el, i){
-  if (i >= 11) el.setAttribute('aria-hidden', 'true');
-});
+// Carrossel infinito de marcas (loop sem fim, largura medida em pixels)
+(function(){
+  var track = document.getElementById('brandsTrack');
+  if (!track) return;
+  var base = track.querySelector('.brands-group');
+  if (!base) return;
+  var SPEED = 70; // pixels por segundo
+
+  function build(){
+    while (track.children.length > 1) track.removeChild(track.lastElementChild);
+    var gw = base.getBoundingClientRect().width;
+    if (!gw) return;
+    // cópias suficientes para cobrir a tela e nunca aparecer espaço vazio
+    var need = Math.ceil((window.innerWidth * 2) / gw) + 1;
+    for (var i = 1; i < need; i++){
+      var clone = base.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    }
+    track.style.setProperty('--brands-shift', gw + 'px');
+    track.style.animationDuration = (gw / SPEED) + 's';
+  }
+
+  var t;
+  build();
+  window.addEventListener('resize', function(){
+    clearTimeout(t);
+    t = setTimeout(build, 250);
+  });
+  window.addEventListener('load', build);
+  if (window.ResizeObserver){
+    var last = 0;
+    new ResizeObserver(function(entries){
+      var w = Math.round(entries[0].contentRect.width);
+      if (w && w !== last){ last = w; clearTimeout(t); t = setTimeout(build, 120); }
+    }).observe(base);
+  }
+})();
 var navToggle = document.querySelector('.mobile-toggle');
 if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
 // Esquenta Black Friday - contagem regressiva
