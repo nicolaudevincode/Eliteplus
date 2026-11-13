@@ -618,10 +618,24 @@ section[id]{scroll-margin-top:calc(var(--header-h, 110px) + 16px);}
 }
 .rv-in .rv-w{opacity:1;transform:none;filter:blur(0);}
 
+/* Brilho roxo passando pelas letras dos títulos */
+.glow-letra .rv-w{
+  animation:brilhoRoxo 4s linear infinite;
+  animation-play-state:paused;
+}
+.glow-letra.rv-in .rv-w{animation-play-state:running;}
+@keyframes brilhoRoxo{
+  0%{text-shadow:0 0 0 rgba(139,92,246,0);}
+  6%{text-shadow:0 0 14px rgba(168,126,255,0.9),0 0 32px rgba(139,92,246,0.55);}
+  16%{text-shadow:0 0 0 rgba(139,92,246,0);}
+  100%{text-shadow:0 0 0 rgba(139,92,246,0);}
+}
+
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   *{transition:none!important;}
   .rv-w{transition:opacity .55s ease!important;transform:none!important;filter:none!important;}
+  .glow-letra .rv-w{animation-duration:5s!important;}
   .brands-track{animation-play-state:running!important;}
 }
 </style>
@@ -1265,7 +1279,9 @@ if(!prefersReduced && window.gsap){
     var passo = porLetra ? 26 : 36;
     for (var i = 0; i < pecas.length; i++){
       pecas[i].style.transitionDelay = Math.min(i * passo, 900) + 'ms';
+      if (porLetra) pecas[i].style.animationDelay = (i * 45) + 'ms';
     }
+    if (porLetra) el.classList.add('glow-letra');
   });
 
   var observer = new IntersectionObserver(function(entradas){
