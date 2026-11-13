@@ -608,6 +608,14 @@ section[id]{scroll-margin-top:calc(var(--header-h, 110px) + 16px);}
   footer{padding-bottom:96px;}
 }
 
+/* Textos que aparecem e desaparecem conforme a rolagem */
+.reveal{
+  opacity:0;transform:translateY(26px);
+  transition:opacity .55s ease,transform .7s cubic-bezier(.22,.9,.3,1);
+  will-change:opacity,transform;
+}
+.reveal.is-in{opacity:1;transform:none;}
+
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   *{transition:none!important;}
@@ -1199,18 +1207,39 @@ if(!prefersReduced && window.gsap){
     .from('.hero-actions .btn',{opacity:0,y:16,duration:.5,stagger:.12},'-=.3')
     .from('.hero-stat',{opacity:0,y:16,duration:.5,stagger:.1},'-=.25')
     .from('.hero-visual',{opacity:0,scale:.94,duration:.8},'-=.6');
-  gsap.utils.toArray('.section-head').forEach(el=>{
-    gsap.from(el,{opacity:0,y:30,duration:.7,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%'}});
-  });
   gsap.from('.cat-card',{opacity:0,y:24,duration:.55,stagger:.06,ease:'power3.out',scrollTrigger:{trigger:'.cat-grid',start:'top 85%'}});
   gsap.from('.plano-card',{opacity:0,y:30,duration:.6,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'.planos-grid',start:'top 85%'}});
   gsap.from('.diff-card',{opacity:0,y:24,duration:.55,stagger:.08,ease:'power3.out',scrollTrigger:{trigger:'.diff-grid',start:'top 85%'}});
   gsap.from('.testi-slider',{opacity:0,y:24,duration:.55,ease:'power3.out',scrollTrigger:{trigger:'.testi-slider',start:'top 85%'}});
   gsap.from('.faq-item',{opacity:0,y:20,duration:.5,stagger:.08,ease:'power3.out',scrollTrigger:{trigger:'.faq-list',start:'top 85%'}});
-  gsap.from('.promo-banner > *',{opacity:0,y:20,duration:.6,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'.promo-banner',start:'top 85%'}});
   gsap.from('.contact-info > *',{opacity:0,y:20,duration:.6,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'.contact-info',start:'top 85%'}});
   gsap.from('form',{opacity:0,y:26,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'form',start:'top 85%'}});
 }
+
+// Textos aparecem/desaparecem conforme a rolagem (funciona em qualquer aparelho)
+(function(){
+  if (!('IntersectionObserver' in window)) return;
+  var alvos = document.querySelectorAll('.section-head .section-label, .section-head h2, .section-head p, .promo-banner h2, .promo-banner p, .contact-info h3');
+  if (!alvos.length) return;
+
+  alvos.forEach(function(el){
+    el.classList.add('reveal');
+    var irmaos = Array.prototype.filter.call(el.parentNode.children, function(c){
+      return c.classList.contains('reveal');
+    });
+    var pos = irmaos.indexOf(el);
+    if (pos > 0) el.style.transitionDelay = Math.min(pos * 90, 270) + 'ms';
+  });
+
+  var observer = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){
+      if (e.isIntersecting) e.target.classList.add('is-in');
+      else e.target.classList.remove('is-in');
+    });
+  }, {threshold: 0.15, rootMargin: '-30px 0px -70px 0px'});
+
+  alvos.forEach(function(el){ observer.observe(el); });
+})();
 
 // Depoimentos em apresentação automática (6s)
 (function(){
